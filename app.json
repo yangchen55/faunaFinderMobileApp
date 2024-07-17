@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "FaunaAPP",
+    "slug": "FaunaAPP",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "faunaapp",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "android": {
+      "package": "com.yourcompany.faunaapp",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": {
+            "scheme": "faunaapp",
+            "host": "reset-password",
+            "pathPrefix": "/"
+          },
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    },
+    "ios": {
+      "bundleIdentifier": "com.yourcompany.faunaapp",
+      "associatedDomains": ["applinks:yourdomain.com"]
+    }
+  }
+}
