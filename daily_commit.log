@@ -22,3 +22,38 @@ Pushed to origin dev
 Script ended at Wed 17 Jul 2024 22:49:26 AEST
 Script started at Wed 17 Jul 2024 23:03:43 AEST
 Added App/util
+Added all changes
+[dev e60ebb6] Daily commit for App/util
+ 26 files changed, 1382 insertions(+)
+ create mode 100644 App/assets/images/.gitkeep
+ create mode 100644 App/assets/images/loginSVG.png
+ create mode 100644 App/assets/images/logo.png
+ create mode 100644 App/assets/images/logo2.png
+ create mode 100644 App/components/.gitkeep
+ create mode 100644 App/components/CodeVerification.js
+ create mode 100644 App/components/CustomButton.js
+ create mode 100644 App/components/CustomModal.js
+ create mode 100644 App/components/InputField.js
+ create mode 100644 App/components/RowItem.js
+ create mode 100644 App/config/.gitkeep
+ create mode 100644 App/config/Navigation.js
+ create mode 100644 App/constants/colors.js
+ create mode 100644 App/helper/axios.js
+ create mode 100644 App/hooks/emailValidation.js
+ create mode 100644 App/screens/.Login.js.swp
+ create mode 100644 App/screens/.SignUp.js.swp
+ create mode 100644 App/screens/.gitkeep
+ create mode 100644 App/screens/CaptureImage.js
+ create mode 100644 App/screens/ForgetPassword.js
+ create mode 100644 App/screens/Home.js
+ create mode 100644 App/screens/Login.js
+ create mode 100644 App/screens/Options.js
+ create mode 100644 App/screens/SignUp.js
+ create mode 100644 daily_commit.log
+ create mode 100755 daily_commit.sh
+Committed App/util
+To https://github.com/yangchen55/faunaFinderMobileApp.git
+   57b43ed..e60ebb6  dev -> dev
+branch 'dev' set up to track 'origin/dev'.
+Pushed to origin dev
+Script ended at Wed 17 Jul 2024 23:03:48 AEST
