@@ -1,0 +1,66 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres:16
+    container_name: db-ff
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - db-data:/var/lib/postgresql/data:cached
+    networks:
+      - web
+
+  backend:
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    container_name: ff-backend
+    restart: always
+    env_file:
+      - .env
+    tty: true
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./backend:/app/:cached
+    environment:
+      - BACKEND_CORS_ORIGINS=${BACKEND_CORS_ORIGINS}
+      - POSTGRES_SERVER=db
+      - POSTGRES_PORT=${POSTGRES_PORT}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    depends_on:
+      - "db"
+    networks:
+      - web
+
+  ff-web:
+    build:
+      context: ff-web
+      dockerfile: Dockerfile
+    container_name: frontend
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./ff-web:/app:cached"
+      - node-modules:/app/node_modules
+    environment:
+      - NODE_ENV=development
+      - REACT_APP_BASE_URL=http://localhost:8888/api/v1
+    networks:
+      - web
+
+volumes:
+  db-data:
+  node-modules:
+
+networks:
+  web:
